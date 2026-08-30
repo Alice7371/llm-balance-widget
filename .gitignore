@@ -12,7 +12,8 @@ captures/
 # Local configuration (SDK paths, signing)
 local.properties
 
-# Signing
+# Signing (release keystore + password backup - never commit)
+keystore/
 *.jks
 *.keystore
 

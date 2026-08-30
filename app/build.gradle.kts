@@ -3,6 +3,12 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
+// Release signing: keystore is provided locally (keystore/) or in CI (decoded
+// from the KEYSTORE_BASE64 secret). Without it, release builds stay unsigned.
+val releaseKeystore: java.io.File =
+    System.getenv("KEYSTORE_FILE")?.let { rootProject.file(it) }
+        ?: rootProject.file("keystore/release.keystore")
+
 android {
     namespace = "com.example.myapp"
     compileSdk = 34
@@ -15,9 +21,23 @@ android {
         versionName = "1.0"
     }
 
+    signingConfigs {
+        if (releaseKeystore.exists()) {
+            create("release") {
+                storeFile = releaseKeystore
+                storePassword = System.getenv("KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("KEY_ALIAS") ?: "llm-balance-widget"
+                keyPassword = System.getenv("KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            if (releaseKeystore.exists()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
 
