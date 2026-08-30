@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyApp</string>
+    <string name="widget_title">MyApp Clock</string>
+    <string name="widget_refresh">Refresh</string>
+    <string name="widget_description">A simple clock widget with a refresh button</string>
+    <string name="activity_subtitle">Demo: DeepSeek balance home-screen widget</string>
+    <string name="api_key_label">DeepSeek API Key</string>
+    <string name="api_key_hint">sk-...</string>
+    <string name="save_button">Save API Key</string>
+    <string name="widget_hint">Tip: long-press your home screen → Widgets → MyApp Balance, then add it. The widget refreshes every 30 minutes or on demand via its Refresh button.</string>
+    <string name="balance_widget_title">DeepSeek Balance</string>
+    <string name="balance_refresh">Refresh</string>
+    <string name="balance_widget_description">Shows your DeepSeek platform balance</string>
+    <string name="kimi_widget_title">Kimi Balance</string>
+    <string name="kimi_widget_description">Shows your Kimi / Moonshot balance</string>
+    <string name="mimo_widget_title">MiMo Balance</string>
+    <string name="mimo_widget_description">Shows your Xiaomi MiMo balance</string>
+    <string name="opencodego_widget_title">OpenCode Go</string>
+    <string name="opencodego_widget_description">Shows your OpenCode Go subscription quota</string>
+    <string name="combined_widget_title">All Balances</string>
+    <string name="combined_widget_description">DeepSeek, Kimi, MiMo and OpenCode Go in one widget</string>
+    <string name="order_label">Widget provider order</string>
+    <string name="order_hint">Use ▲ ▼ to reorder. Providers without a saved credential are hidden from the widget automatically.</string>
+    <string name="custom_label">Custom providers</string>
+    <string name="custom_name_hint">Provider name</string>
+    <string name="custom_url_hint">Balance URL (https://...)</string>
+    <string name="custom_key_hint">API key (sk-...)</string>
+    <string name="add_custom_button">Add custom provider</string>
+    <string name="custom_hint">Custom providers appear as extra slots in the widget after the built-in ones. The URL must return the balance as JSON.</string>
+</resources>
